@@ -23,9 +23,9 @@ The application is built using ASP.NET Core and Entity Framework Core, with a SQ
 - **External Services**: Open Library API for fetching book details by ISBN
 
 ## Getting Started
-// Using Package Manager - PM 
-add-migration initial -Context BooksContext
-update-database -Context BooksContext
+- ** **Using Package Manager** - PM 
+- add-migration initial -Context BooksContext
+- update-database -Context BooksContext
 
 ### Prerequisites
 
