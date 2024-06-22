@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - My ASP.NET Application</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        /* Custom styles to adjust the table width */
+        .custom-table {
+            width: 100%; /* Adjust the width of the table */
+        }
+
+            .custom-table th, .custom-table td {
+                width: auto; /* Adjust the width of table columns */
+            }
+
+                .custom-table th:nth-child(1),
+                .custom-table td:nth-child(1) {
+                    width: 15%; /* Example width for Title column */
+                }
+
+                .custom-table th:nth-child(2),
+                .custom-table td:nth-child(2) {
+                    width: 15%; /* Example width for Author column */
+                }
+
+                .custom-table th:nth-child(3),
+                .custom-table td:nth-child(3) {
+                    width: 15%; /* Example width for Genre column */
+                }
+
+                .custom-table th:nth-child(4),
+                .custom-table td:nth-child(4) {
+                    width: 10%; /* Example width for Pages column */
+                }
+
+                .custom-table th:nth-child(5),
+                .custom-table td:nth-child(5) {
+                    width: 15%; /* Example width for PublishDate column */
+                }
+
+                .custom-table th:nth-child(6),
+                .custom-table td:nth-child(6) {
+                    width: 15%; /* Example width for ISBN column */
+                }
+
+                .custom-table th:nth-child(7),
+                .custom-table td:nth-child(7) {
+                    width: 15%; /* Example width for Complete column */
+                }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MyApp</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto">
+                        <!-- Comment out or remove these links -->
+                        <!--
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Books" asp-action="Index">Books</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        -->
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - My ASP.NET Application - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

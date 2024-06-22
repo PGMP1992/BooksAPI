@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Welcome";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="text-center mt-5">
+            <h1>Welcome to your library</h1>
+            <form method="post" asp-action="Login">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" class="form-control" id="username" name="userName" required />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password" name="password" required />
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Log in</button>
+                </div>
+            </form>
+            <div class="form-group">
+                <a href="/Home/CreateAccount" class="btn btn-secondary">Create new acc</a>
+                <a href="/Home/ForgotPassword" class="btn btn-secondary">Forgot password</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

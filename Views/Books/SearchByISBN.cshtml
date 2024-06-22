@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Search By ISBN";
+}
+
+<h1>Search By ISBN</h1>
+
+<form asp-action="SearchByISBN" method="post">
+    <div class="form-group">
+        <label for="isbn">ISBN</label>
+        <input type="text" class="form-control" id="isbn" name="isbn" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>

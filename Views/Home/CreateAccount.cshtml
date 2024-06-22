@@ -1,0 +1,32 @@
+﻿@model EndProj_Books.Models.User
+
+@{
+    ViewData["Title"] = "Create Account";
+}
+
+<div class="container">
+    <div class="text-center mt-5">
+        <h1>Create an Account</h1>
+        <form method="post" asp-action="CreateAccount">
+            <div class="form-group">
+                <label asp-for="UserName">UserName:</label>
+                <input type="text" class="form-control" asp-for="UserName" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password">Password:</label>
+                <input type="password" class="form-control" asp-for="Password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
