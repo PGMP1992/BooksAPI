@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging; // Make sure this namespace is included
 using System.Security.Claims;
 using EndProj_Books.Models;
 using EndProj_Books.Services;
+using EndProj___Books.Data;
 
 namespace EndProj_Books.Controllers
 {
@@ -98,7 +99,8 @@ namespace EndProj_Books.Controllers
                 PublishDate = publishDate,
                 ISBN = isbn,
                 UserId = userId,
-                Complete = false // Initialize Complete to false
+                Complete = false, // Initialize Complete to false,
+                Cover = bookDetails.Cover // Added PM
             };
 
             _context.Books.Add(book);
@@ -116,7 +118,7 @@ namespace EndProj_Books.Controllers
         // POST: Books/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Author,Genre,Pages,PublishDate,ISBN,Complete")] Books book)
+        public async Task<IActionResult> Create([Bind("Id,Title,Author,Genre,Cover,Pages,PublishDate,ISBN,Complete")] Books book)
         {
             if (ModelState.IsValid)
             {
@@ -149,7 +151,7 @@ namespace EndProj_Books.Controllers
         // POST: Books/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Author,Genre,Pages,PublishDate,ISBN,Complete")] Books book)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Author,Genre,Cover,Pages,PublishDate,ISBN,Complete")] Books book)
         {
             _logger.LogInformation("Entering Edit action method. Initial ModelState.IsValid: {IsValid}", ModelState.IsValid);
 
@@ -208,9 +210,6 @@ namespace EndProj_Books.Controllers
             _logger.LogWarning("ModelState is not valid. Errors: {Errors}", ModelState.Values.SelectMany(v => v.Errors));
             return View(book);
         }
-
-
-
 
         // GET: Books/Delete/5
         public async Task<IActionResult> Delete(int? id)

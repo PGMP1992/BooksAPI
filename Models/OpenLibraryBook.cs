@@ -7,5 +7,6 @@
         public string? Genre { get; set; }
         public int Pages { get; set; }
         public string? PublishDate { get; set; }
+        public string? Cover { get; internal set; }
     }
 }

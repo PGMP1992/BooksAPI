@@ -12,15 +12,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EndProj___Books.Migrations
 {
     [DbContext(typeof(BooksContext))]
-    [Migration("20240622093707_initial")]
-    partial class initial
+    [Migration("20250124102928_changedBooks")]
+    partial class changedBooks
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.4")
+                .HasAnnotation("ProductVersion", "9.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -40,15 +40,17 @@ namespace EndProj___Books.Migrations
                     b.Property<bool>("Complete")
                         .HasColumnType("bit");
 
+                    b.Property<string>("Cover")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Genre")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ISBN")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Pages")
+                    b.Property<int?>("Pages")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("PublishDate")

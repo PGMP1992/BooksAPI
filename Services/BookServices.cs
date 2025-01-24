@@ -39,7 +39,8 @@ namespace EndProj_Books.Services
                     Author = bookData["authors"]?.FirstOrDefault()?["name"]?.ToString(),
                     Genre = bookData["subjects"]?.FirstOrDefault()?["name"]?.ToString(),
                     Pages = (int?)bookData["number_of_pages"] ?? 0,
-                    PublishDate = (string?)bookData["publish_date"]
+                    PublishDate = (string?)bookData["publish_date"],
+                    Cover = bookData["cover"]?.FirstOrDefault()?.ToString() //Added PM
                 };
 
                 _logger.LogInformation($"Deserialized Open Library API response: {book}");

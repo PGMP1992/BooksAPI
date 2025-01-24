@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using EndProj_Books.Models;
 using Microsoft.EntityFrameworkCore;
+using EndProj___Books.Data;
 
 namespace EndProj_Books.Controllers
 {

@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EndProj_Books.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace EndProj_Books.Models
+namespace EndProj___Books.Data
 {
     public class BooksContext : DbContext
     {
